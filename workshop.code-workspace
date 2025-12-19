@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "D:/wamp64/www/workshop"
+		},
+		{
+			"path": "../../../bdd"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "bdd"
+	}
+}
