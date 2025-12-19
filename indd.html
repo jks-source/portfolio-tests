@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animation Intro</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         body, html {
@@ -61,35 +68,57 @@
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
-            align-items: end;
+            justify-content: end;
             position: relative;
         }
-
         #header-content {
-            padding-left: 5%;
-            padding-bottom: 5%;
+            padding-top: 10%;
+            padding-right: 3%;
             color: white;
             opacity: 0;
             z-index: 3;
             position: relative;
+            text-align: end;
+            width: 100%;
         }
-
         #header-content h1 {
-            font-size: 10rem;
-            font-weight: bold;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            padding-bottom: 0 !important;
-            margin-bottom: 0 !important;
+            font-size: 9rem;
+            font-family: "Inter", sans-serif;
+            font-weight: 800;
+            line-height: 0.7;
         }
-
-        #header-content p {
-            font-size: 3rem;
-            font-family: Arial, sans-serif;
-            padding-top: 0 !important;
-            margin-top: 0 !important;
+        #header-content h1 span {
+            font-size: 4.5rem;
         }
-
+        #header-content .tt  {
+            height: 30vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        #header-content .tt p {
+            padding-left: 3%;
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: "Inter", sans-serif;
+        }
+        #header .srcl {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 1%;
+        }
+        .srcl p {
+            padding: 0 !important;
+            margin: 0 !important;
+            color: white;
+        }
+        .srcl a {
+            text-decoration: none;
+        }
         main {
             background: #fff;
             min-height: 100vh;
@@ -111,8 +140,16 @@
 
     <header id="header" style="background-image: url('zzdzd.png');">
         <div id="header-content">
-            <h1>ILAN DIELS</h1>
-            <p>Développeur Web</p>
+            <h1>FULLSTACK <br> <span>DEVELOPPEUR</span></h1>
+            <div class="tt">
+                <p>PORTFOLIO</p>
+            </div>
+        </div>
+        <div class="srcl">
+            <a href="#main">
+                <p>SCROLL</p>
+                <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i>
+            </a>
         </div>
     </header>
 
@@ -131,29 +168,28 @@
         tl.set("#il", { x: 0 });
         tl.set("#an", { x: 0 });
         
-        // Pause de 2 secondes avec ILAN
-        tl.to({}, { duration: 0.8 });
+        tl.to({}, { duration: 0.5 });
 
         tl.to("#il", {
             x: -100,
-            duration: 1.5,
+            duration: 1,
             ease: "power2.inOut"
         });
         
         tl.to("#an", {
             x: 155,
-            duration: 1.4,
+            duration: 1,
             ease: "power2.inOut"
         }, "<");
         
         tl.to("#landscape-image", {
             width: 250,
-            duration: 1.5,
+            duration: 1,
             ease: "power2.inOut"
         }, "<");
 
-        // Pause de 3 secondes avec IL [PHOTO] AN
-        tl.to({}, { duration: 2 });
+        // Pause de 1s avec IL [PHOTO] AN
+        tl.to({}, { duration: 1 });
 
 
         tl.to("#text-container", {
@@ -165,26 +201,26 @@
             width: "100vw",
             height: "100vh",
             borderRadius: 0,
-            duration: 1.5,
+            duration: 0.8,
             ease: "power2.inOut"
         }, "<0.3");
 
         //Faire disparaître l'intro-container pour révéler le header
         tl.to("#intro-container", {
             opacity: 0,
-            duration: 0.8,
+            duration: 0.5,
             ease: "power2.inOut",
             onComplete: () => {
                 document.getElementById('intro-container').style.display = 'none';
                 document.body.style.overflow = 'auto';
                 document.documentElement.style.overflow = 'auto';
             }
-        }, "+=1");
+        }, "+=0.5");
 
         tl.to("#header-content", {
             opacity: 1,
             y: 0,
-            duration: 1.2,
+            duration: 0.5,
             ease: "power2.out"
         }, "-=0.5");
     </script>
