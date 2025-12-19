@@ -110,6 +110,7 @@
             left: 50%;
             transform: translateX(-50%);
             padding-bottom: 1%;
+            z-index: 5;
         }
         .srcl p {
             padding: 0 !important;
@@ -146,7 +147,7 @@
             </div>
         </div>
         <div class="srcl">
-            <a href="#main">
+            <a href="">
                 <p>SCROLL</p>
                 <i class="fa-solid fa-angle-down" style="color: #ffffff;"></i>
             </a>
@@ -189,7 +190,7 @@
         }, "<");
 
         // Pause de 1s avec IL [PHOTO] AN
-        tl.to({}, { duration: 1 });
+        tl.to({}, { duration: 0.5 });
 
 
         tl.to("#text-container", {
